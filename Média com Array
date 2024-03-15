@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+
+// strcpy = 
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	
+	char resultado[200];
+	float notas[4], media, soma = 0;
+	int i;
+	
+	for(i=0;i<4;i++){
+do{
+	printf("Digite sua %dª nota: ", i+1);
+	scanf("%f",&notas[i]);	
+}while(notas[i] < 0 || notas[i] > 10);
+	soma = soma + notas[i];
+	media = soma /4;
+}
+	
+	if (media >= 7){
+		strcpy(resultado,"Aluno Aprovado");
+	}else if(media >= 5){
+		strcpy(resultado,"Aluno está de Recuperação");
+	}else{
+		strcpy(resultado,"O aluno está Reprovado");
+	}
+	
+// Exibindo notas.
+
+	for(i=0;i<4;i++){	
+	printf("\nSua %dª Nota é: %.1f", i+1, notas[i]);
+}
+
+	printf("\n\nMédia: %.1f",media);
+	printf("\nResultado: %s",resultado);
+	
+			return 0;
+}
