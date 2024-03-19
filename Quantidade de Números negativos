@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <locale.h>
+#define SIZE 2
+
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	
+	float numeros[SIZE], numerosNegativos = 0.0, numerosPositivos = 0.0;
+	int i;
+	
+	for(i=0;i<SIZE;i++){
+	printf("Digite seu %dº número: ",i+1);
+	scanf("%f",&numeros[i]);
+	
+	// Numeros Maior que 0? faça numerosPositivos receber a soma do número Senão conte os números negativos.
+	numeros[i]>0?(numerosPositivos+=numeros[i]):(numerosNegativos++);
+}
+	
+	printf("\n=== Exibindo Dados ===\n");
+	printf("Quantidade de Números Negativos: %.1f \n",numerosNegativos);
+	printf("Soma dos Números Positivos: %.1f \n\n",numerosPositivos);
+	
+	return 0;
+}
