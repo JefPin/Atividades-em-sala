@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	
+	int i = 0, numeros = 1, numerosPares = 0, numerosImpares = 0; 
+	int numerosPositivos = 0, numerosNegativos = 0, numerosInseridos = 0, numerosPositivosPares = 0, numerosPositivosImpares = 0;
+	
+	while(numeros != 0){
+	printf("Digite o %dº Número: ",i+1);
+	scanf("%d",&numeros);		
+
+	numerosInseridos++;		
+
+	if(numeros > 0 || numeros< 0){
+		
+	numerosPares += numeros % 2 == 0;
+	numerosImpares += numeros != 0;
+		
+	if((numeros > 0 ) && numerosPares)
+	numerosPositivosPares++;
+	else if((numeros > 0) && numerosImpares)
+	numerosPositivosImpares++;		
+		
+	// se numeros for maior que 0 soma em numerosPositivos, senão, Soma em numerosNegativos.
+	numeros>0?numerosPositivos++ : numerosNegativos++;
+		
+	}else{
+	break;
+	}	
+}
+	// Exibindo Resultados.
+	system("cls || clear");
+	printf("\n=== Exibindo Dados ===\n");
+	fflush(stdin);
+
+	printf("Quantidade de Números Positivos Pares: %d \n",numerosPositivosPares);
+	printf("Quantidade de Números Positivos Impares: %d \n",numerosPositivosImpares);
+	printf("Quantidade de Números Positivos: %d \n",numerosPositivos);
+	printf("Quantidade de Números Negativos: %d \n",numerosNegativos);
+	printf("Quantidade de Números Inseridos: %d \n",numerosInseridos);
+	
+	return 0;
+}
