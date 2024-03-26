@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	
+	char bandas[3][200];
+	char integrantes[3][5][200];
+	int i,j;
+	
+	for(i=0;i<3;i++){
+		fflush(stdin);
+		printf("Digite a %iª Banda: ",i+1);
+		fgets(bandas[i],200,stdin);
+		
+		for(j=0;j<5;j++){
+			printf("DIgite o nome do %iº Integrante:",j+1);
+			scanf("%s",&integrantes[i][j]);
+		}
+	}
+	
+	// Exibindo Dados.
+	
+	
+		for(i=0;i<3;i++){
+			printf("%dª Banda: %s",i+1, bandas[i]);
+			
+			for(j=0;j<5;j++){
+				printf("%dº Integrante: %s \n",j+1, integrantes[i][j]);
+				
+		}
+	}
+	
+	
+	
+	
+	return 0;
+}
